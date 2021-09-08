@@ -11,7 +11,7 @@ namespace University.Api.Data
         public static void Seed(UniversityDbContext context)
         {
             BookConfiguration.Seed(context);
-            CellphoneConfiguration.Seed(context);            
+            CellphoneConfiguration.Seed(context);
             StudentConfiguration.Seed(context);
         }
 
@@ -44,9 +44,9 @@ namespace University.Api.Data
                     }
                 };
 
-                foreach(var entity in entities)
+                foreach (var entity in entities)
                 {
-                    if(context.Set<Cellphone>().SingleOrDefault(x  => x.PhoneName == entity.PhoneName) == null)
+                    if (context.Set<Cellphone>().SingleOrDefault(x => x.PhoneName == entity.PhoneName) == null)
                     {
                         context.Add(entity);
                     }

@@ -12,44 +12,44 @@ namespace University.Api.Features
 {
     public class GetStudentsPage
     {
-        public class Request: IRequest<Response>
+        public class Request : IRequest<Response>
         {
             public int PageSize { get; set; }
             public int Index { get; set; }
         }
 
-        public class Response: ResponseBase
+        public class Response : ResponseBase
         {
             public int Length { get; set; }
             public List<StudentDto> Entities { get; set; }
         }
 
-        public class Handler: IRequestHandler<Request, Response>
+        public class Handler : IRequestHandler<Request, Response>
         {
             private readonly IUniversityDbContext _context;
-        
+
             public Handler(IUniversityDbContext context)
                 => _context = context;
-        
+
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
                 var query = from student in _context.Students
                             .Include(x => x.Book)
                             .Include(x => x.Cellphone)
                             select student;
-                
+
                 var length = await _context.Students.CountAsync();
-                
+
                 var students = await query.Page(request.Index, request.PageSize)
                     .Select(x => x.ToDto()).ToListAsync();
-                
+
                 return new()
                 {
                     Length = length,
                     Entities = students
                 };
             }
-            
+
         }
     }
 }

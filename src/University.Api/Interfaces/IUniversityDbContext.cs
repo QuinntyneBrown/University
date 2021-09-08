@@ -11,6 +11,6 @@ namespace University.Api.Interfaces
         DbSet<Book> Books { get; }
         DbSet<Student> Students { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-        
+
     }
 }

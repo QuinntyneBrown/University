@@ -7,7 +7,7 @@ namespace University.Api.Features
     {
         public static StudentDto ToDto(this Student student)
         {
-            return new ()
+            return new()
             {
                 StudentId = student.StudentId,
                 Firstname = student.Firstname,
@@ -17,6 +17,6 @@ namespace University.Api.Features
                 Book = student.Book?.ToDto(),
                 Cellphone = student.Cellphone?.ToDto()
             };
-        }        
+        }
     }
 }

@@ -1,11 +1,10 @@
-using University.Api.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Linq;
+using University.Api.Data;
 
 namespace University.Api
 {
@@ -27,8 +26,6 @@ namespace University.Api
             using (var scope = services.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<UniversityDbContext>();
-
-                var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
 
                 if (args.Contains("ci"))
                     args = new string[4] { "dropdb", "migratedb", "seeddb", "stop" };

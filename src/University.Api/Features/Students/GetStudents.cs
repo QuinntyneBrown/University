@@ -12,30 +12,31 @@ namespace University.Api.Features
 {
     public class GetStudents
     {
-        public class Request: IRequest<Response> { }
+        public class Request : IRequest<Response> { }
 
-        public class Response: ResponseBase
+        public class Response : ResponseBase
         {
             public List<StudentDto> Students { get; set; }
         }
 
-        public class Handler: IRequestHandler<Request, Response>
+        public class Handler : IRequestHandler<Request, Response>
         {
             private readonly IUniversityDbContext _context;
-        
+
             public Handler(IUniversityDbContext context)
                 => _context = context;
-        
+
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                return new () {
+                return new()
+                {
                     Students = await _context.Students
                     .Include(x => x.Book)
                     .Include(x => x.Cellphone)
                     .Select(x => x.ToDto()).ToListAsync()
                 };
             }
-            
+
         }
     }
 }

@@ -34,7 +34,7 @@ namespace University.Api
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "University.Api.Api");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "University.Api");
                 c.RoutePrefix = string.Empty;
             });
         }

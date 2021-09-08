@@ -10,45 +10,45 @@ namespace University.Api.Features
 {
     public class UpdateStudent
     {
-        public class Validator: AbstractValidator<Request>
+        public class Validator : AbstractValidator<Request>
         {
             public Validator()
             {
                 RuleFor(request => request.Student).NotNull();
                 RuleFor(request => request.Student).SetValidator(new StudentValidator());
             }
-        
+
         }
 
-        public class Request: IRequest<Response>
+        public class Request : IRequest<Response>
         {
             public StudentDto Student { get; set; }
         }
 
-        public class Response: ResponseBase
+        public class Response : ResponseBase
         {
             public StudentDto Student { get; set; }
         }
 
-        public class Handler: IRequestHandler<Request, Response>
+        public class Handler : IRequestHandler<Request, Response>
         {
             private readonly IUniversityDbContext _context;
-        
+
             public Handler(IUniversityDbContext context)
                 => _context = context;
-        
+
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
                 var student = await _context.Students.SingleAsync(x => x.StudentId == request.Student.StudentId);
-                
+
                 await _context.SaveChangesAsync(cancellationToken);
-                
+
                 return new Response()
                 {
                     Student = student.ToDto()
                 };
             }
-            
+
         }
     }
 }

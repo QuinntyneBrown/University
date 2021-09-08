@@ -6,7 +6,7 @@ namespace University.Api.Features
     {
         public static CellphoneDto ToDto(this Cellphone cellphone)
         {
-            return new ()
+            return new()
             {
                 PhoneId = cellphone.PhoneId,
                 PhoneName = cellphone.PhoneName,
@@ -14,6 +14,6 @@ namespace University.Api.Features
                 PhoneYear = cellphone.PhoneYear,
                 Color = cellphone.Color
             };
-        }        
+        }
     }
 }

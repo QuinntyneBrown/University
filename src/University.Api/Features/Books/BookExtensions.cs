@@ -14,6 +14,6 @@ namespace University.Api.Features
                 PublishYear = book.PublishYear,
                 Color = book.Color
             };
-        }        
+        }
     }
 }
