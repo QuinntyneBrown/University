@@ -1,8 +1,10 @@
+import { Book, Cellphone } from "@api";
+
 export type Student = {
     studentId: string,
     firstname: string,
     lastname: string,
     age: number,
-    bookeId: string,
-    phoneId: string,
+    book?: Book,
+    cellphone?: Cellphone
 };

@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace University.Api.Migrations
 {
@@ -11,7 +10,8 @@ namespace University.Api.Migrations
                 name: "Books",
                 columns: table => new
                 {
-                    BookId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BookId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     BookName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PublishYear = table.Column<int>(type: "int", nullable: false),
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -25,7 +25,8 @@ namespace University.Api.Migrations
                 name: "Cellphones",
                 columns: table => new
                 {
-                    PhoneId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PhoneId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     PhoneName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneModel = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneYear = table.Column<int>(type: "int", nullable: false),
@@ -40,20 +41,21 @@ namespace University.Api.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    StudentId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Firstname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Lastname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Age = table.Column<int>(type: "int", nullable: false),
                     Sex = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    BookeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PhoneId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    BookId = table.Column<int>(type: "int", nullable: false),
+                    PhoneId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Students", x => x.StudentId);
                     table.ForeignKey(
-                        name: "FK_Students_Books_BookeId",
-                        column: x => x.BookeId,
+                        name: "FK_Students_Books_BookId",
+                        column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "BookId",
                         onDelete: ReferentialAction.Cascade);
@@ -66,9 +68,9 @@ namespace University.Api.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_BookeId",
+                name: "IX_Students_BookId",
                 table: "Students",
-                column: "BookeId");
+                column: "BookId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Students_PhoneId",

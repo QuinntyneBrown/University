@@ -36,13 +36,13 @@ export class CellphoneService implements IPagableService<Cellphone> {
   }
 
   public remove(options: { cellphone: Cellphone }): Observable<void> {
-    return this._client.delete<void>(`${this._baseUrl}api/cellphone/${options.cellphone.cellphoneId}`);
+    return this._client.delete<void>(`${this._baseUrl}api/cellphone/${options.cellphone.phoneId}`);
   }
 
   public create(options: { cellphone: Cellphone }): Observable<{ cellphone: Cellphone }> {
     return this._client.post<{ cellphone: Cellphone }>(`${this._baseUrl}api/cellphone`, { cellphone: options.cellphone });
   }
-  
+
   public update(options: { cellphone: Cellphone }): Observable<{ cellphone: Cellphone }> {
     return this._client.put<{ cellphone: Cellphone }>(`${this._baseUrl}api/cellphone`, { cellphone: options.cellphone });
   }

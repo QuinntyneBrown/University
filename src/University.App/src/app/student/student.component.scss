@@ -1,0 +1,27 @@
+:host {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:60px;
+    padding: 60px;
+    box-sizing: border-box;
+
+    a {
+      display: block;
+      line-height: 2em;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+
+      > span:first-child {
+        font-weight: 500;
+      }
+    }
+
+    h3 {
+      line-height: 2em;
+      padding:0;
+      margin: 0;
+    }
+  }
+}

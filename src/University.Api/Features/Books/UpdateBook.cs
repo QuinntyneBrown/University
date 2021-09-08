@@ -1,10 +1,10 @@
 using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 using University.Api.Core;
 using University.Api.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace University.Api.Features
 {

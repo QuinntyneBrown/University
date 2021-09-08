@@ -12,7 +12,7 @@ namespace University.Api.Features
     {
         public class Request: IRequest<Response>
         {
-            public Guid CellphoneId { get; set; }
+            public int CellphoneId { get; set; }
         }
 
         public class Response: ResponseBase

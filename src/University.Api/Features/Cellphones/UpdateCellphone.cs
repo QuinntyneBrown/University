@@ -39,7 +39,7 @@ namespace University.Api.Features
         
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var cellphone = await _context.Cellphones.SingleAsync(x => x.PhoneId == request.Cellphone.CellphoneId);
+                var cellphone = await _context.Cellphones.SingleAsync(x => x.PhoneId == request.Cellphone.PhoneId);
                 
                 await _context.SaveChangesAsync(cancellationToken);
                 

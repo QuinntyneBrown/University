@@ -1,14 +1,12 @@
 using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using University.Api.Extensions;
+using System.Threading;
+using System.Threading.Tasks;
 using University.Api.Core;
-using University.Api.Interfaces;
 using University.Api.Extensions;
-using Microsoft.EntityFrameworkCore;
+using University.Api.Interfaces;
 
 namespace University.Api.Features
 {
@@ -36,7 +34,9 @@ namespace University.Api.Features
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
                 var query = from student in _context.Students
-                    select student;
+                            .Include(x => x.Book)
+                            .Include(x => x.Cellphone)
+                            select student;
                 
                 var length = await _context.Students.CountAsync();
                 

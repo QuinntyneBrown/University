@@ -1,10 +1,7 @@
-using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using System;
-using University.Api.Models;
 using University.Api.Core;
 using University.Api.Interfaces;
 
@@ -14,7 +11,7 @@ namespace University.Api.Features
     {
         public class Request: IRequest<Response>
         {
-            public Guid StudentId { get; set; }
+            public int StudentId { get; set; }
         }
 
         public class Response: ResponseBase

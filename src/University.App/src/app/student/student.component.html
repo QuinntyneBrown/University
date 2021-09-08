@@ -1,1 +1,15 @@
-<p>student works!</p>
+<ng-container *ngIf="vm$ | async as vm">
+
+<div class="grid-container">
+  <mat-card *ngFor="let student of vm.students | phoneFilter: vm.cellphone">
+    <h2>{{ student.lastname }}, {{ student.firstname }}</h2>
+
+    <h3>Details</h3>
+    <a><span>Sex: </span><span>{{ student.sex }}</span></a>
+    <a><span>Age: </span><span>{{ student.age }}</span></a>
+    <a [routerLink]="['/','student','phone', student.cellphone.phoneId ]"><span>Cellphone: </span><span>{{ student.cellphone.phoneName }} {{ student.cellphone.phoneModel }}</span></a>
+    <a (click)="openBookDialog(student.book)"><span>Book: </span><span>{{ student.book.bookName }}</span></a>
+  </mat-card>
+</div>
+
+</ng-container>

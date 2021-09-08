@@ -14,7 +14,7 @@ namespace University.Api.Features
     {
         public class Request: IRequest<Response>
         {
-            public Guid BookId { get; set; }
+            public int BookId { get; set; }
         }
 
         public class Response: ResponseBase

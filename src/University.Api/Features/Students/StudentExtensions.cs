@@ -9,9 +9,14 @@ namespace University.Api.Features
         {
             return new ()
             {
-                StudentId = student.StudentId
+                StudentId = student.StudentId,
+                Firstname = student.Firstname,
+                Lastname = student.Lastname,
+                Age = student.Age,
+                Sex = student.Sex,
+                Book = student.Book?.ToDto(),
+                Cellphone = student.Cellphone?.ToDto()
             };
-        }
-        
+        }        
     }
 }

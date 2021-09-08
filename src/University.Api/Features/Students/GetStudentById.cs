@@ -12,7 +12,7 @@ namespace University.Api.Features
     {
         public class Request: IRequest<Response>
         {
-            public Guid StudentId { get; set; }
+            public int StudentId { get; set; }
         }
 
         public class Response: ResponseBase
@@ -30,7 +30,10 @@ namespace University.Api.Features
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
                 return new () {
-                    Student = (await _context.Students.SingleOrDefaultAsync(x => x.StudentId == request.StudentId)).ToDto()
+                    Student = (await _context.Students
+                    .Include(x => x.Book)
+                    .Include(x => x.Cellphone)
+                    .SingleOrDefaultAsync(x => x.StudentId == request.StudentId)).ToDto()
                 };
             }
             

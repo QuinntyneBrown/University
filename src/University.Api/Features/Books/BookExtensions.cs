@@ -7,11 +7,13 @@ namespace University.Api.Features
     {
         public static BookDto ToDto(this Book book)
         {
-            return new ()
+            return new()
             {
-                BookId = book.BookId
+                BookId = book.BookId,
+                BookName = book.BookName,
+                PublishYear = book.PublishYear,
+                Color = book.Color
             };
-        }
-        
+        }        
     }
 }

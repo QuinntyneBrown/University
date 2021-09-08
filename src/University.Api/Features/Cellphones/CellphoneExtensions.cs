@@ -1,4 +1,3 @@
-using System;
 using University.Api.Models;
 
 namespace University.Api.Features
@@ -9,9 +8,12 @@ namespace University.Api.Features
         {
             return new ()
             {
-                CellphoneId = cellphone.PhoneId
+                PhoneId = cellphone.PhoneId,
+                PhoneName = cellphone.PhoneName,
+                PhoneModel = cellphone.PhoneModel,
+                PhoneYear = cellphone.PhoneYear,
+                Color = cellphone.Color
             };
-        }
-        
+        }        
     }
 }

@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B87F225E-BE89-44B0-A20F-E79B1A32F8FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University.Api", "src\University.Api\University.Api.csproj", "{B73D3ED9-036C-46CA-9EE2-109DBF49C16C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "University.Api", "src\University.Api\University.Api.csproj", "{B73D3ED9-036C-46CA-9EE2-109DBF49C16C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E880C43-F2A1-479B-BCD0-65A4EF35B4A6}"
+	ProjectSection(SolutionItems) = preProject
+		clisettings.json = clisettings.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B73D3ED9-036C-46CA-9EE2-109DBF49C16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,7 +35,13 @@ Global
 		{B73D3ED9-036C-46CA-9EE2-109DBF49C16C}.Release|x86.ActiveCfg = Release|Any CPU
 		{B73D3ED9-036C-46CA-9EE2-109DBF49C16C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B73D3ED9-036C-46CA-9EE2-109DBF49C16C} = {B87F225E-BE89-44B0-A20F-E79B1A32F8FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8782E9C9-F361-4757-B8D7-06A8751A90DE}
 	EndGlobalSection
 EndGlobal

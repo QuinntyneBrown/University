@@ -29,7 +29,10 @@ namespace University.Api.Features
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
                 return new () {
-                    Students = await _context.Students.Select(x => x.ToDto()).ToListAsync()
+                    Students = await _context.Students
+                    .Include(x => x.Book)
+                    .Include(x => x.Cellphone)
+                    .Select(x => x.ToDto()).ToListAsync()
                 };
             }
             

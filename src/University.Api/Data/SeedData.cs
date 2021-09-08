@@ -24,20 +24,23 @@ namespace University.Api.Data
                     new Cellphone
                     {
                         PhoneName = Constants.PhoneName.iPhone,
-                        PhoneModel = "5",
-                        Color = "White"
+                        PhoneModel = "6S",
+                        Color = "White",
+                        PhoneYear = 1990
                     },
                     new Cellphone
                     {
                         PhoneName = Constants.PhoneName.Blackberry,
                         PhoneModel = "BB500",
-                        Color = "Aluminum"
+                        Color = "Aluminum",
+                        PhoneYear = 2002
                     },
                     new Cellphone
                     {
                         PhoneName = Constants.PhoneName.Samsung,
                         PhoneModel = "Galaxy",
-                        Color = "Black"
+                        Color = "Black",
+                        PhoneYear = 2010
                     }
                 };
 
@@ -116,7 +119,7 @@ namespace University.Api.Data
                         Age = 23,
                         Sex = 'M',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.iPhone ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign ).BookId
                     },
                     new Student
                     {
@@ -125,16 +128,16 @@ namespace University.Api.Data
                         Age = 20,
                         Sex = 'M',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Samsung ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign ).BookId
                     },
                     new Student
                     {
                         Firstname = "Monique",
                         Lastname = "Anderson",
                         Age = 28,
-                        Sex = 'M',
+                        Sex = 'F',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Blackberry ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign).BookId
                     },
                     new Student
                     {
@@ -143,7 +146,7 @@ namespace University.Api.Data
                         Age = 39,
                         Sex = 'M',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.iPhone ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.AdaptiveCode ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.AdaptiveCode ).BookId
                     },
                     new Student
                     {
@@ -152,16 +155,16 @@ namespace University.Api.Data
                         Age = 20,
                         Sex = 'M',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Samsung ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.ScenarioFocusedEnginerring ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.ScenarioFocusedEnginerring ).BookId
                     },
                     new Student
                     {
                         Firstname = "Lisa",
                         Lastname = "Simpson",
                         Age = 22,
-                        Sex = 'M',
+                        Sex = 'F',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Samsung ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.ScenarioFocusedEnginerring ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.ScenarioFocusedEnginerring ).BookId
                     },
                     new Student
                     {
@@ -170,7 +173,7 @@ namespace University.Api.Data
                         Age = 24,
                         Sex = 'M',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Samsung ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.AdaptiveCode ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.AdaptiveCode ).BookId
                     },
                     new Student
                     {
@@ -179,16 +182,16 @@ namespace University.Api.Data
                         Age = 19,
                         Sex = 'M',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Samsung ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.GreatByChoice ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.GreatByChoice ).BookId
                     },
                     new Student
                     {
                         Firstname = "Olivia",
                         Lastname = "Brown",
                         Age = 31,
-                        Sex = 'M',
+                        Sex = 'F',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Samsung ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.DomainDrivenDesign ).BookId
                     },
                     new Student
                     {
@@ -197,7 +200,7 @@ namespace University.Api.Data
                         Age = 40,
                         Sex = 'M',
                         PhoneId = context.Cellphones.Single(x => x.PhoneName == Constants.PhoneName.Samsung ).PhoneId,
-                        BookeId = context.Books.Single(x => x.BookName == Constants.BookName.DataStructures ).BookId
+                        BookId = context.Books.Single(x => x.BookName == Constants.BookName.DataStructures ).BookId
                     },
                 };
 
