@@ -11,7 +11,7 @@
   "applicationDirectory": "C:\\Projects\\University\\src\\University.Api",
   "infrastructureDirectory": "C:\\Projects\\University\\src\\University.Api",
   "apiDirectory": "C:\\Projects\\University\\src\\University.Api",
-  "appDirectories": null,
+  "appDirectories": [ "C:\\Projects\\University\\src\\University.App" ],
   "buildingBlocksCoreNamespace": "BuildingBlocks.Core",
   "buildingBlocksEventStoreNamespace": "BuildingBlocks.EventStore",
   "store": null,
