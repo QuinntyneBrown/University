@@ -1,0 +1,32 @@
+{
+  "projects": null,
+  "path": "C:\\Projects\\University",
+  "solutionName": null,
+  "rootNamespace": null,
+  "domainNamespace": "University.Api",
+  "applicationNamespace": "University.Api",
+  "infrastructureNamespace": "University.Api",
+  "apiNamespace": "University.Api",
+  "domainDirectory": "C:\\Projects\\University\\src\\University.Api",
+  "applicationDirectory": "C:\\Projects\\University\\src\\University.Api",
+  "infrastructureDirectory": "C:\\Projects\\University\\src\\University.Api",
+  "apiDirectory": "C:\\Projects\\University\\src\\University.Api",
+  "appDirectories": null,
+  "buildingBlocksCoreNamespace": "BuildingBlocks.Core",
+  "buildingBlocksEventStoreNamespace": "BuildingBlocks.EventStore",
+  "store": null,
+  "namespace": null,
+  "domain": null,
+  "core": null,
+  "api": null,
+  "entityIdDataType": null,
+  "sourceFolder": "src",
+  "testFolder": null,
+  "dbContext": "UniversityDbContext",
+  "eventSourcing": false,
+  "resources": [
+    "Cellphone",
+    "Book",
+    "Student"
+  ]
+}
